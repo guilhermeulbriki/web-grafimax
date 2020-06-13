@@ -1,14 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
-import Dashboard from '../pages/dashboard';
+import Route from './Route';
+
+import Toner from '../pages/toner';
+import Maintenance from '../pages/maintenance';
+import Errors from '../pages/error';
+import SignIn from '../pages/signin';
 
 const Routes: React.FC = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact component={Dashboard} />
-    </Switch>
-  </BrowserRouter>
+  <Switch>
+    <Route path="/" exact component={SignIn} />
+
+    <Route path="/toner" exact component={Toner} isPrivate />
+    <Route path="/maintenance" exact component={Maintenance} isPrivate />
+    <Route path="/error" exact component={Errors} isPrivate />
+  </Switch>
 );
 
 export default Routes;

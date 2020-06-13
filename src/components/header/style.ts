@@ -11,14 +11,15 @@ const downAfter = keyframes`
 `;
 
 export const Container = styled.header`
-  background: #dfdfdf;
+  background: #3c3c3c;
+  border-bottom: 1px solid #505050;
   display: flex;
   align-items: center;
   justify-content: center;
 
   div {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     height: 70px;
     padding: 0 10px;
 
@@ -30,41 +31,51 @@ export const Container = styled.header`
       height: 55px;
     }
 
-    nav {
-      height: 70px;
+    aside {
       display: flex;
       align-items: center;
 
-      a {
-        color: #707070;
-        text-decoration: none;
-        position: relative;
-        transition: color 0.2s;
-        font-size: 18px;
+      nav {
+        height: 70px;
+        display: flex;
+        align-items: center;
 
-        & + a {
-          margin-left: 24px;
+        a {
+          color: #707070;
+          text-decoration: none;
+          position: relative;
+          transition: color 0.2s;
+          font-size: 18px;
+
+          & + a {
+            margin-left: 24px;
+          }
+
+          &:hover {
+            color: #505050;
+          }
         }
 
-        &:hover {
-          color: #909090;
+        a.here {
+          color: #f5f5f5;
+          font-weight: 500;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -25px;
+            left: 0px;
+            background: #0081b2;
+            animation: ${downAfter} 0.4s;
+          }
         }
       }
 
-      a.here {
-        color: #2d2e2e;
-        font-weight: 500;
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 3px;
-          bottom: -25px;
-          left: 0px;
-          background: #0081b2;
-          animation: ${downAfter} 0.4s;
-        }
+      svg {
+        margin-left: 32px;
+        cursor: pointer;
       }
     }
   }
