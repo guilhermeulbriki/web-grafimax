@@ -90,7 +90,7 @@ const Toner: React.FC = () => {
       const tonersByColors = [] as Toners[];
 
       filteredColors.forEach((cor) => {
-        toners.map((toner) => {
+        toners.forEach((toner) => {
           if (toner.color === cor) {
             tonersByColors.push(toner);
           }

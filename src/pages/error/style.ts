@@ -55,6 +55,7 @@ export const Table = styled.table`
 
   tbody {
     th {
+      text-align: left;
       font-size: 15px;
       font-weight: 400;
       padding: 8px 8px;
